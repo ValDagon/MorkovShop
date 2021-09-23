@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:shop_app/screens/shop_list/cookie_page.dart';
+import 'package:shop_app/screens/shopping_list/shopping_list.dart';
 import '../../../size_config.dart';
 import 'section_title.dart';
 
@@ -16,7 +17,7 @@ class SpecialOffers extends StatelessWidget {
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: SectionTitle(
-            title: "Для вас",
+            title: "Выбор блюд",
             press: () {},
           ),
         ),
@@ -26,14 +27,14 @@ class SpecialOffers extends StatelessWidget {
           child: Row(
             children: [
               SpecialOfferCard(
-                image: "assets/images/Image Banner 2.png",
-                category: "Спортивное питание",
+                image: "assets/images/Image Banner 5.png",
+                category: "Блюдо дня",
                 numOfBrands: 18,
                 press: () {},
               ),
               SpecialOfferCard(
-                image: "assets/images/Image Banner 3.png",
-                category: "Диетические блюда",
+                image: "assets/images/Image Banner 4.png",
+                category: "Подборка блюд",
                 numOfBrands: 24,
                 press: () {},
               ),
@@ -64,12 +65,12 @@ class SpecialOfferCard extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
       child: GestureDetector(
-        onTap: press,
+        onTap: () {},
         child: SizedBox(
-          width: getProportionateScreenWidth(242),
-          height: getProportionateScreenWidth(100),
+          width: getProportionateScreenWidth(150),
+          height: getProportionateScreenWidth(150),
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(30),
             child: Stack(
               children: [
                 Image.asset(

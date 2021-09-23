@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_app/screens/home/home_screen.dart';
 import 'package:shop_app/screens/profile/profile_screen.dart';
+import 'package:shop_app/screens/shopping_list/shopping_list.dart';
 
 import '../constants.dart';
 import '../enums.dart';
@@ -39,30 +40,25 @@ class CustomBottomNavBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
-                icon: SvgPicture.asset(
-                  "assets/icons/Shop Icon.svg",
-                  color: MenuState.home == selectedMenu
-                      ? kPrimaryColor
-                      : inActiveIconColor,
-                ),
+                icon: Icon(Icons.home),
                 onPressed: () =>
                     Navigator.pushNamed(context, HomeScreen.routeName),
               ),
               IconButton(
-                icon: SvgPicture.asset("assets/icons/Heart Icon.svg"),
+                icon: Icon(Icons.shopping_cart),
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ShoppingList())),
+              ),
+              IconButton(
+                icon: Icon(Icons.add),
                 onPressed: () {},
               ),
               IconButton(
-                icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
+                icon: Icon(Icons.bookmark),
                 onPressed: () {},
               ),
               IconButton(
-                icon: SvgPicture.asset(
-                  "assets/icons/User Icon.svg",
-                  color: MenuState.profile == selectedMenu
-                      ? kPrimaryColor
-                      : inActiveIconColor,
-                ),
+                icon: Icon(Icons.person),
                 onPressed: () =>
                     Navigator.pushNamed(context, ProfileScreen.routeName),
               ),

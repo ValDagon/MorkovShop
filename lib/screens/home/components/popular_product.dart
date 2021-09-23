@@ -13,7 +13,7 @@ class PopularProducts extends StatelessWidget {
         Padding(
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-          child: SectionTitle(title: "Скидки", press: () {}),
+          child: SectionTitle(title: "Выбор продуктов", press: () {}),
         ),
         SizedBox(height: getProportionateScreenWidth(20)),
         SingleChildScrollView(

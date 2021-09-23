@@ -35,7 +35,7 @@ class CartScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 30),
-              child: Icon(Icons.dehaze_rounded),
+              child: Icon(Icons.expand_more),
             ),
           ],
         ),

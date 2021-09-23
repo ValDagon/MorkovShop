@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluttercookie/cookie_detail.dart';
+import 'package:shop_app/screens/shop_list/cookie_detail.dart';
 
 class CookiePage extends StatelessWidget {
   @override
@@ -20,13 +20,13 @@ class CookiePage extends StatelessWidget {
                 mainAxisSpacing: 15.0,
                 childAspectRatio: 0.8,
                 children: <Widget>[
-                  _buildCard('Cookie mint', '\$3.99', 'assets/cookiemint.jpg',
+                  _buildCard('Хлебные', '\43', 'assets/images/cookiemint.jpg',
                       false, false, context),
-                  _buildCard('Cookie cream', '\$5.99', 'assets/cookiecream.jpg',
-                      true, false, context),
-                  _buildCard('Cookie classic', '\$1.99',
-                      'assets/cookieclassic.jpg', false, true, context),
-                  _buildCard('Cookie choco', '\$2.99', 'assets/cookiechoco.jpg',
+                  _buildCard('Мороженое', '\32',
+                      'assets/images/cookiecream.jpg', true, false, context),
+                  _buildCard('Фрукты', '\21', 'assets/images/cookieclassic.jpg',
+                      false, true, context),
+                  _buildCard('Овощи', '\12', 'assets/images/cookiechoco.jpg',
                       false, false, context)
                 ],
               )),
@@ -42,12 +42,11 @@ class CookiePage extends StatelessWidget {
         padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
         child: InkWell(
             onTap: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => CookieDetail(
-                    assetPath: imgPath,
-                    cookieprice:price,
-                    cookiename: name
-                  )));
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => CookieDetail(
+                      assetPath: imgPath,
+                      cookieprice: price,
+                      cookiename: name)));
             },
             child: Container(
                 decoration: BoxDecoration(
@@ -101,7 +100,7 @@ class CookiePage extends StatelessWidget {
                             if (!added) ...[
                               Icon(Icons.shopping_basket,
                                   color: Color(0xFFD17E50), size: 12.0),
-                              Text('Add to cart',
+                              Text('Открыть',
                                   style: TextStyle(
                                       fontFamily: 'Varela',
                                       color: Color(0xFFD17E50),

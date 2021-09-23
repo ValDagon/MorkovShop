@@ -18,11 +18,6 @@ class Body extends StatelessWidget {
             press: () => {},
           ),
           ProfileMenu(
-            text: "Уведомления",
-            icon: "assets/icons/Bell.svg",
-            press: () {},
-          ),
-          ProfileMenu(
             text: "Настройки",
             icon: "assets/icons/Settings.svg",
             press: () {},
