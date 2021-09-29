@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/screens/shop_list/cookie_detail.dart';
+import 'package:shop_app/screens/products_type/cookie_detail.dart';
 
 class CookiePage extends StatelessWidget {
   @override

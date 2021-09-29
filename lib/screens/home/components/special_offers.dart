@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/screens/shop_list/cookie_page.dart';
+import 'package:shop_app/screens/dishes_compilation/dishes_compilation_screen.dart';
+import 'package:shop_app/screens/products_type/cookie_page.dart';
 import 'package:shop_app/screens/shopping_list/shopping_list.dart';
 import '../../../size_config.dart';
 import 'section_title.dart';
@@ -65,7 +66,10 @@ class SpecialOfferCard extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => DishesCompilationCard()));
+        },
         child: SizedBox(
           width: getProportionateScreenWidth(150),
           height: getProportionateScreenWidth(150),

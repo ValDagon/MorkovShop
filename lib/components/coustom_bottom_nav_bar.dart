@@ -50,7 +50,7 @@ class CustomBottomNavBar extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => ShoppingList())),
               ),
               IconButton(
-                icon: Icon(Icons.add),
+                icon: Icon(Icons.add_circle_outline_outlined),
                 onPressed: () {},
               ),
               IconButton(
