@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_app/models/Product.dart';
-import 'package:shop_app/screens/details/details_screen.dart';
+import 'package:shop_app/screens/product_details/product_details_screen.dart';
 
 import '../constants.dart';
 import '../size_config.dart';
@@ -26,7 +26,7 @@ class ProductCard extends StatelessWidget {
         child: GestureDetector(
           onTap: () => Navigator.pushNamed(
             context,
-            DetailsScreen.routeName,
+            ProductDetailsScreen.routeName,
             arguments: ProductDetailsArguments(product: product),
           ),
           child: Column(
@@ -58,11 +58,10 @@ class ProductCard extends StatelessWidget {
                   Text(
                     "300",
                     style: TextStyle(
-                      fontSize: getProportionateScreenWidth(18),
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black45,
-                      decoration: TextDecoration.lineThrough
-                    ),
+                        fontSize: getProportionateScreenWidth(18),
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black45,
+                        decoration: TextDecoration.lineThrough),
                   ),
                   Text(
                     "${product.price}",

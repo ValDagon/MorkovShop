@@ -4,7 +4,7 @@ import '../../models/Product.dart';
 import 'components/body.dart';
 import 'components/custom_app_bar.dart';
 
-class DetailsScreen extends StatelessWidget {
+class ProductDetailsScreen extends StatelessWidget {
   static String routeName = "/details";
 
   @override
