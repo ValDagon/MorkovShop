@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:shop_app/components/coustom_bottom_nav_bar.dart';
 import 'package:shop_app/screens/products_type/cookie_detail.dart';
 
 class CookiePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: buildAppBar(context),
       backgroundColor: Color(0xFFFCFAF8),
       body: ListView(
         children: <Widget>[
@@ -20,33 +23,56 @@ class CookiePage extends StatelessWidget {
                 mainAxisSpacing: 15.0,
                 childAspectRatio: 0.8,
                 children: <Widget>[
-                  _buildCard('Хлебные', '\43', 'assets/images/cookiemint.jpg',
-                      false, false, context),
-                  _buildCard('Мороженое', '\32',
-                      'assets/images/cookiecream.jpg', true, false, context),
-                  _buildCard('Фрукты', '\21', 'assets/images/cookieclassic.jpg',
-                      false, true, context),
-                  _buildCard('Овощи', '\12', 'assets/images/cookiechoco.jpg',
-                      false, false, context)
+                  _buildCard('(43)', 'Овощи', 'assets/images/vegetables.png',
+                      false, context),
+                  _buildCard(
+                      '(32)', 'Хлеб', 'assets/images/bread.png', true, context),
+                  _buildCard('(21)', 'Фрукты', 'assets/images/fruits.png',
+                      false, context),
+                  _buildCard('(12)', 'Лапша', 'assets/images/lapsha.png', false,
+                      context)
                 ],
               )),
           SizedBox(height: 15.0)
         ],
       ),
+      bottomNavigationBar: CustomBottomNavBar(),
     );
   }
 
-  Widget _buildCard(String name, String price, String imgPath, bool added,
-      bool isFavorite, context) {
+  AppBar buildAppBar(BuildContext context) {
+    return AppBar(
+      title: Center(
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 15, right: 15),
+              child: Text(
+                "Категории продуктов",
+                style: TextStyle(color: Colors.black87),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 30),
+              child: Icon(
+                Icons.search_rounded,
+                color: Colors.black,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCard(
+      String name, String price, String imgProductPath, bool added, context) {
     return Padding(
-        padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
+        padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 20.0, right: 5.0),
         child: InkWell(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => CookieDetail(
-                      assetPath: imgPath,
-                      cookieprice: price,
-                      cookiename: name)));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => CookieDetail()));
             },
             child: Container(
                 decoration: BoxDecoration(
@@ -60,65 +86,33 @@ class CookiePage extends StatelessWidget {
                     color: Colors.white),
                 child: Column(children: [
                   Padding(
-                      padding: EdgeInsets.all(5.0),
+                      padding: EdgeInsets.all(0.0),
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            isFavorite
-                                ? Icon(Icons.favorite, color: Color(0xFFEF7532))
-                                : Icon(Icons.favorite_border,
-                                    color: Color(0xFFEF7532))
-                          ])),
+                          children: [])),
                   Hero(
-                      tag: imgPath,
+                      tag: imgProductPath,
                       child: Container(
-                          height: 75.0,
-                          width: 75.0,
+                          height: 150.0,
+                          width: 155.0,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: AssetImage(imgPath),
+                                  image: AssetImage(imgProductPath),
                                   fit: BoxFit.contain)))),
                   SizedBox(height: 7.0),
+                  Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Container(color: Color(0xFFEBEBEB), height: 1.0)),
                   Text(price,
                       style: TextStyle(
                           color: Color(0xFFCC8053),
                           fontFamily: 'Varela',
-                          fontSize: 14.0)),
+                          fontSize: 16.0)),
                   Text(name,
                       style: TextStyle(
                           color: Color(0xFF575E67),
                           fontFamily: 'Varela',
-                          fontSize: 14.0)),
-                  Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Container(color: Color(0xFFEBEBEB), height: 1.0)),
-                  Padding(
-                      padding: EdgeInsets.only(left: 5.0, right: 5.0),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            if (!added) ...[
-                              Icon(Icons.shopping_basket,
-                                  color: Color(0xFFD17E50), size: 12.0),
-                              Text('Открыть',
-                                  style: TextStyle(
-                                      fontFamily: 'Varela',
-                                      color: Color(0xFFD17E50),
-                                      fontSize: 12.0))
-                            ],
-                            if (added) ...[
-                              Icon(Icons.remove_circle_outline,
-                                  color: Color(0xFFD17E50), size: 12.0),
-                              Text('3',
-                                  style: TextStyle(
-                                      fontFamily: 'Varela',
-                                      color: Color(0xFFD17E50),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12.0)),
-                              Icon(Icons.add_circle_outline,
-                                  color: Color(0xFFD17E50), size: 12.0),
-                            ]
-                          ]))
+                          fontSize: 16.0)),
                 ]))));
   }
 }

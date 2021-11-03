@@ -22,7 +22,7 @@ class DefaultButton extends StatelessWidget {
         color: ButtonColor,
         onPressed: press,
         child: Text(
-          text,
+          "Продолжить",
           style: TextStyle(
             fontSize: getProportionateScreenWidth(18),
             color: Colors.white,
