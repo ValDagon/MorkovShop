@@ -20,34 +20,26 @@ class ProductDescription extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-          child: Text(
-            product.title,
-            style: Theme.of(context).textTheme.headline6,
-          ),
-        ),
-        Align(
-          alignment: Alignment.centerRight,
-          child: Container(
-            padding: EdgeInsets.all(getProportionateScreenWidth(15)),
-            width: getProportionateScreenWidth(64),
-            decoration: BoxDecoration(
-              color:
-                  product.isFavourite ? Color(0xFFFFE6E6) : Color(0xFFF5F6F9),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20),
-                bottomLeft: Radius.circular(20),
+        Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: getProportionateScreenWidth(20)),
+              child: Text(
+                product.title,
+                style: Theme.of(context).textTheme.headline6,
               ),
             ),
-            child: SvgPicture.asset(
-              "assets/icons/Heart Icon_2.svg",
+            Icon(
+              Icons.bookmark,
               color:
                   product.isFavourite ? Color(0xFFFF4848) : Color(0xFFDBDEE4),
-              height: getProportionateScreenWidth(16),
             ),
-          ),
+          ],
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: 20, right: 20, bottom: 20, top: 5),
+          child: Text("На 100 г: белок - 15г, жир - 3г, углеводы - 4г"),
         ),
         Padding(
           padding: EdgeInsets.only(

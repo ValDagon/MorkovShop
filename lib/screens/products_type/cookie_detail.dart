@@ -81,7 +81,7 @@ class CookieDetail extends StatelessWidget {
   Widget _buildCard(String name, String price, String img2Path, bool added,
       bool isFavorite, context) {
     return Padding(
-        padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
+        padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 15.0, right: 5.0),
         child: InkWell(
             onTap: () {},
             child: Container(
