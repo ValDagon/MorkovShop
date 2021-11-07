@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/components/default_button.dart';
-import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/size_config.dart';
 
 import 'dishes_description.dart';

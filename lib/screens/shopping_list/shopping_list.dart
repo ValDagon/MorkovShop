@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/screens/cart/cart_screen.dart';
-import 'package:shop_app/screens/cart/components/check_out_card.dart';
 
 class ShoppingList extends StatelessWidget {
   @override

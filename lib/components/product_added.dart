@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/components/coustom_bottom_nav_bar.dart';
 import 'package:shop_app/components/default_button.dart';
 
 class ProductAdded extends StatelessWidget {
