@@ -7,10 +7,10 @@ import '../../../size_config.dart';
 class ColorDots extends StatelessWidget {
   const ColorDots({
     Key key,
-    @required this.product,
+    // @required this.product,
   }) : super(key: key);
 
-  final Product product;
+  // final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +21,6 @@ class ColorDots extends StatelessWidget {
           EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
       child: Row(
         children: [
-          Text(
-            "1 штука",
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-          ),
           // ...List.generate(
           //   product.colors.length,
           //   (index) => ColorDot(
@@ -37,7 +33,16 @@ class ColorDots extends StatelessWidget {
             icon: Icons.remove,
             press: () {},
           ),
-          SizedBox(width: getProportionateScreenWidth(20)),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+            child: Text(
+              "1",
+              style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Colors.black),
+            ),
+          ),
           RoundedIconBtn(
             icon: Icons.add,
             showShadow: true,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/components/default_button.dart';
 import 'package:shop_app/components/rounded_icon_btn.dart';
+import 'package:shop_app/models/Product.dart';
+import 'package:shop_app/screens/product_details/components/color_dots.dart';
 import 'package:shop_app/size_config.dart';
 
 import 'dishes_description.dart';
@@ -22,6 +24,19 @@ class Body extends StatelessWidget {
               DishesImages(),
               DishesDescription(
                 pressOnSeeMore: () {},
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: getProportionateScreenWidth(20)),
+                child: Row(
+                  children: [
+                    Text(
+                      "Количество персон",
+                      style: TextStyle(fontSize: 18, color: Colors.black),
+                    ),
+                    Expanded(child: ColorDots()),
+                  ],
+                ),
               ),
               Container(
                 child: TabBar(tabs: [
