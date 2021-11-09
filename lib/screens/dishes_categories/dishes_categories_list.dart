@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/screens/cart/cart_screen.dart';
+import 'package:shop_app/screens/dishes_compilation/dishes_compilation_screen.dart';
 
-class ShoppingList extends StatelessWidget {
+class DishesCategoriesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "Список покупок",
+            "Категории блюд",
             style: TextStyle(color: Colors.black),
           ),
         ),
@@ -25,8 +25,10 @@ class ShoppingList extends StatelessWidget {
             title: Text("Блюдо дня"),
             subtitle: Text("Собрание популярных блюд"),
             onTap: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => CartScreen()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => DishesCompilationCard()));
             }),
 
         ListTile(

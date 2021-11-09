@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/screens/cart/cart_screen.dart';
 import 'package:shop_app/screens/home/home_screen.dart';
-import 'package:shop_app/screens/products_type/cookie_page.dart';
+import 'package:shop_app/screens/products_type/product_type.dart';
 import 'package:shop_app/screens/profile/profile_screen.dart';
-import 'package:shop_app/screens/shopping_list/shopping_list.dart';
 
 import '../enums.dart';
 
@@ -46,7 +46,7 @@ class CustomBottomNavBar extends StatelessWidget {
               IconButton(
                 icon: Icon(Icons.shopping_cart),
                 onPressed: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ShoppingList())),
+                    MaterialPageRoute(builder: (context) => CartScreen())),
               ),
               IconButton(
                 icon: Icon(Icons.add_circle_outline_outlined),
@@ -54,8 +54,7 @@ class CustomBottomNavBar extends StatelessWidget {
               ),
               IconButton(
                 icon: Icon(Icons.bookmark),
-                onPressed: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CookiePage())),
+                onPressed: () {},
               ),
               IconButton(
                 icon: Icon(Icons.person),

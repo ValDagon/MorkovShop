@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/models/Cart.dart';
 import 'package:shop_app/models/Product.dart';
+import 'package:shop_app/screens/dishes_details/dishes_details_screen.dart';
 
 import '../../../size_config.dart';
 
@@ -17,8 +18,8 @@ class DishesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        // Navigator.of(context).push(
-        //     MaterialPageRoute(builder: (context) => DishesDetailsScreen()));
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => DishesDetailsScreen()));
       },
       child: Row(
         children: [

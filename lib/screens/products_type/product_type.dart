@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:shop_app/components/coustom_bottom_nav_bar.dart';
-import 'package:shop_app/screens/products_type/cookie_detail.dart';
+import 'package:shop_app/screens/products_type/products_type_list.dart';
 
-class CookiePage extends StatelessWidget {
+class ProductsType extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +72,7 @@ class CookiePage extends StatelessWidget {
         child: InkWell(
             onTap: () {
               Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => CookieDetail()));
+                  MaterialPageRoute(builder: (context) => ProductsTypeList()));
             },
             child: Container(
                 decoration: BoxDecoration(

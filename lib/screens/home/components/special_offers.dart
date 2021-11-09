@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/screens/dishes_categories/dishes_categories_list.dart';
 import 'package:shop_app/screens/dishes_compilation/dishes_compilation_screen.dart';
 
 import '../../../size_config.dart';
@@ -18,7 +19,12 @@ class SpecialOffers extends StatelessWidget {
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: SectionTitle(
             title: "Выбор блюд",
-            press: () {},
+            press: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => DishesCategoriesList()));
+            },
           ),
         ),
         SizedBox(height: getProportionateScreenWidth(20)),

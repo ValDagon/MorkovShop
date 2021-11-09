@@ -17,7 +17,7 @@ class DishesCompilationCard extends StatelessWidget {
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
       title: Text(
-        "Популярное",
+        "Блюдо дня",
         style: TextStyle(color: Colors.black),
       ),
     );
