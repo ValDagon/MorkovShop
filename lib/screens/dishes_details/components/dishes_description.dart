@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/screens/product_details/components/color_dots.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
