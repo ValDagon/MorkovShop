@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shop_app/screens/my_profile/my_profile_screen.dart';
 
 import '../../../constants.dart';
 
@@ -22,7 +23,10 @@ class ProfileMenu extends StatelessWidget {
         padding: EdgeInsets.all(20),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         color: Color(0xFFF5F6F9),
-        onPressed: press,
+        onPressed: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => MyProfileScreen()));
+        },
         child: Row(
           children: [
             SvgPicture.asset(

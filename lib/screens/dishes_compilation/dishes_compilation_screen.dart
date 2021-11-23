@@ -4,7 +4,6 @@ import 'package:shop_app/components/coustom_bottom_nav_bar.dart';
 import 'components/body.dart';
 
 class DishesCompilationCard extends StatelessWidget {
-  static String routeName = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
