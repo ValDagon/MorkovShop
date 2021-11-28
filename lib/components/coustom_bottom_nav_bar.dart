@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/screens/add_screens/add_screen.dart';
 import 'package:shop_app/screens/cart/cart_screen.dart';
 import 'package:shop_app/screens/home/home_screen.dart';
-import 'package:shop_app/screens/products_type/product_type.dart';
 import 'package:shop_app/screens/profile/profile_screen.dart';
 
 import '../enums.dart';
@@ -50,7 +50,8 @@ class CustomBottomNavBar extends StatelessWidget {
               ),
               IconButton(
                 icon: Icon(Icons.add_circle_outline_outlined),
-                onPressed: () {},
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AddScreen())),
               ),
               IconButton(
                 icon: Icon(Icons.bookmark),
