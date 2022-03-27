@@ -15,13 +15,9 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   int currentPage = 0;
   List<Map<String, String>> splashData = [
+    {"text": "Добро Пожаловать!", "image": "assets/images/splash_1.png"},
     {
-      "text": "Добро Пожаловать!",
-      "image": "assets/images/splash_1.png"
-    },
-    {
-      "text":
-          "Купить что-то ещё никогда не было так легко",
+      "text": "Купить что-то ещё никогда не было так легко",
       "image": "assets/images/splash_2.png"
     },
     {
@@ -84,7 +80,7 @@ class _BodyState extends State<Body> {
     );
   }
 
-  AnimatedContainer buildDot({int index}) {
+  AnimatedContainer buildDot({int? index}) {
     return AnimatedContainer(
       duration: kAnimationDuration,
       margin: EdgeInsets.only(right: 5),

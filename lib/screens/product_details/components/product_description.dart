@@ -6,13 +6,13 @@ import '../../../size_config.dart';
 
 class ProductDescription extends StatelessWidget {
   const ProductDescription({
-    Key key,
+    Key? key,
     @required this.product,
     this.pressOnSeeMore,
   }) : super(key: key);
 
-  final Product product;
-  final GestureTapCallback pressOnSeeMore;
+  final Product? product;
+  final GestureTapCallback? pressOnSeeMore;
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +25,14 @@ class ProductDescription extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                   horizontal: getProportionateScreenWidth(20)),
               child: Text(
-                product.title,
+                product!.title!,
                 style: Theme.of(context).textTheme.headline6,
               ),
             ),
             Icon(
               Icons.bookmark,
               color:
-                  product.isFavourite ? Color(0xFFFF4848) : Color(0xFFDBDEE4),
+                  product!.isFavourite! ? Color(0xFFFF4848) : Color(0xFFDBDEE4),
             ),
           ],
         ),
@@ -46,7 +46,7 @@ class ProductDescription extends StatelessWidget {
             right: getProportionateScreenWidth(64),
           ),
           child: Text(
-            product.description,
+            product!.description!,
             maxLines: 3,
           ),
         ),

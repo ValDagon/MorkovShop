@@ -26,7 +26,7 @@ class _BodyState extends State<Body> {
               decoration: const InputDecoration(
                 hintText: '@username',
               ),
-              validator: (String value) {
+              validator: (String? value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter some text';
                 }
@@ -48,7 +48,7 @@ class _BodyState extends State<Body> {
               decoration: const InputDecoration(
                 hintText: 'Иван Иванов',
               ),
-              validator: (String value) {
+              validator: (String? value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter some text';
                 }
@@ -70,7 +70,7 @@ class _BodyState extends State<Body> {
               decoration: const InputDecoration(
                 hintText: 'example@mail.ru',
               ),
-              validator: (String value) {
+              validator: (String? value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter some text';
                 }
@@ -92,7 +92,7 @@ class _BodyState extends State<Body> {
               decoration: const InputDecoration(
                 hintText: '89058123124',
               ),
-              validator: (String value) {
+              validator: (String? value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter some text';
                 }
@@ -114,7 +114,7 @@ class _BodyState extends State<Body> {
               decoration: const InputDecoration(
                 hintText: '',
               ),
-              validator: (String value) {
+              validator: (String? value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter some text';
                 }

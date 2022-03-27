@@ -22,5 +22,5 @@ class ProductDetailsScreen extends StatelessWidget {
 class ProductDetailsArguments {
   final Product product;
 
-  ProductDetailsArguments({@required this.product});
+  ProductDetailsArguments({required this.product});
 }

@@ -8,12 +8,12 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: SizeConfig.screenHeight * 0.04),
+        SizedBox(height: SizeConfig.screenHeight! * 0.04),
         Image.asset(
           "assets/images/success.png",
-          height: SizeConfig.screenHeight * 0.4, //40%
+          height: SizeConfig.screenHeight! * 0.4, //40%
         ),
-        SizedBox(height: SizeConfig.screenHeight * 0.08),
+        SizedBox(height: SizeConfig.screenHeight! * 0.08),
         Text(
           "Успешный вход",
           style: TextStyle(
@@ -24,7 +24,7 @@ class Body extends StatelessWidget {
         ),
         Spacer(),
         SizedBox(
-          width: SizeConfig.screenWidth * 0.6,
+          width: SizeConfig.screenWidth! * 0.6,
           child: DefaultButton(
             text: "Продолжить",
             press: () {

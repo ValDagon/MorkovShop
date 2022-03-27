@@ -7,7 +7,7 @@ import 'section_title.dart';
 
 class SpecialOffers extends StatelessWidget {
   const SpecialOffers({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -55,16 +55,16 @@ class SpecialOffers extends StatelessWidget {
 
 class SpecialOfferCard extends StatelessWidget {
   const SpecialOfferCard({
-    Key key,
+    Key? key,
     @required this.category,
     @required this.image,
     @required this.numOfBrands,
     @required this.press,
   }) : super(key: key);
 
-  final String category, image;
-  final int numOfBrands;
-  final GestureTapCallback press;
+  final String? category, image;
+  final int? numOfBrands;
+  final GestureTapCallback? press;
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +83,7 @@ class SpecialOfferCard extends StatelessWidget {
             child: Stack(
               children: [
                 Image.asset(
-                  image,
+                  image!,
                   fit: BoxFit.cover,
                 ),
                 Container(

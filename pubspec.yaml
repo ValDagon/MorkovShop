@@ -18,7 +18,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -29,7 +29,12 @@ dependencies:
   cupertino_icons: ^1.0.3
   # if you are using latest flutter please update your flutter_svg package to ^0.18.*
   flutter_svg: ^0.22.0 # help us to use SVG in our app
-  provider: ^6.0.0 # for State management
+  provider: ^6.0.2 # for State management
+  firebase_auth: ^3.3.11
+  cloud_firestore: ^3.1.10
+  fluttertoast: ^8.0.9
+  firebase_core: ^1.13.1
+
 
 dev_dependencies:
   flutter_test:

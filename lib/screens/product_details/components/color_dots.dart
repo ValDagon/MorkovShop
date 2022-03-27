@@ -5,7 +5,7 @@ import '../../../size_config.dart';
 
 class ColorDots extends StatelessWidget {
   const ColorDots({
-    Key key,
+    Key? key,
     // @required this.product,
   }) : super(key: key);
 

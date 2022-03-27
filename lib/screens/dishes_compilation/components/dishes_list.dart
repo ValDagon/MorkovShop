@@ -7,13 +7,14 @@ import '../../../size_config.dart';
 
 class DishesList extends StatelessWidget {
   const DishesList({
-    Key key,
+    Key? key,
     @required this.cart,
     @required this.product,
   }) : super(key: key);
 
-  final Cart cart;
-  final Product product;
+  final Cart? cart;
+  final Product? product;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -73,7 +74,7 @@ class DishesList extends StatelessWidget {
                   color: Color(0xFFF5F6F9),
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: Image.asset(cart.product.images[0]),
+                child: Image.asset(cart!.product!.images![0]),
               ),
             ),
           ),

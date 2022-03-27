@@ -5,7 +5,7 @@ import '../../../size_config.dart';
 
 class DishesImages extends StatefulWidget {
   const DishesImages({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

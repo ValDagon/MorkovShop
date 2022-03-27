@@ -25,7 +25,7 @@ class AddRecipes extends StatelessWidget {
                 decoration: const InputDecoration(
                   hintText: 'Название',
                 ),
-                validator: (String value) {
+                validator: (String? value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter some text';
                   }
@@ -47,7 +47,7 @@ class AddRecipes extends StatelessWidget {
                 decoration: const InputDecoration(
                   hintText: 'Создать рецепт',
                 ),
-                validator: (String value) {
+                validator: (String? value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter some text';
                   }

@@ -5,11 +5,11 @@ import '../../../size_config.dart';
 
 class DishesDescription extends StatelessWidget {
   const DishesDescription({
-    Key key,
+    Key? key,
     this.pressOnSeeMore,
   }) : super(key: key);
 
-  final GestureTapCallback pressOnSeeMore;
+  final GestureTapCallback? pressOnSeeMore;
 
   @override
   Widget build(BuildContext context) {

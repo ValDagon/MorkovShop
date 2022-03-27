@@ -33,14 +33,14 @@ class Categories extends StatelessWidget {
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
-    Key key,
+    Key? key,
     @required this.icon,
     @required this.text,
     @required this.press,
   }) : super(key: key);
 
-  final String icon, text;
-  final GestureTapCallback press;
+  final String? icon, text;
+  final GestureTapCallback? press;
 
   @override
   Widget build(BuildContext context) {
@@ -58,10 +58,10 @@ class CategoryCard extends StatelessWidget {
                 color: Color(0xFFFFECDF),
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: SvgPicture.asset(icon),
+              child: SvgPicture.asset(icon!),
             ),
             SizedBox(height: 5),
-            Text(text, textAlign: TextAlign.center)
+            Text(text!, textAlign: TextAlign.center)
           ],
         ),
       ),

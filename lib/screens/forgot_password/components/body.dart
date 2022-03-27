@@ -18,7 +18,7 @@ class Body extends StatelessWidget {
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: Column(
             children: [
-              SizedBox(height: SizeConfig.screenHeight * 0.04),
+              SizedBox(height: SizeConfig.screenHeight! * 0.04),
               Text(
                 "Забыли пароль?",
                 style: TextStyle(
@@ -31,7 +31,7 @@ class Body extends StatelessWidget {
                 "Введите вашу почту и мы отправим вам ссылку для восстановления аккаунта",
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: SizeConfig.screenHeight * 0.1),
+              SizedBox(height: SizeConfig.screenHeight! * 0.1),
               ForgotPassForm(),
             ],
           ),
@@ -49,7 +49,7 @@ class ForgotPassForm extends StatefulWidget {
 class _ForgotPassFormState extends State<ForgotPassForm> {
   final _formKey = GlobalKey<FormState>();
   List<String> errors = [];
-  String email;
+  String? email;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -73,7 +73,7 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
               return null;
             },
             validator: (value) {
-              if (value.isEmpty && !errors.contains(kEmailNullError)) {
+              if (value!.isEmpty && !errors.contains(kEmailNullError)) {
                 setState(() {
                   errors.add(kEmailNullError);
                 });
@@ -96,16 +96,16 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
           ),
           SizedBox(height: getProportionateScreenHeight(30)),
           FormError(errors: errors),
-          SizedBox(height: SizeConfig.screenHeight * 0.1),
+          SizedBox(height: SizeConfig.screenHeight! * 0.1),
           DefaultButton(
             text: "Продолжить",
             press: () {
-              if (_formKey.currentState.validate()) {
+              if (_formKey.currentState!.validate()) {
                 // Do what you want to do
               }
             },
           ),
-          SizedBox(height: SizeConfig.screenHeight * 0.1),
+          SizedBox(height: SizeConfig.screenHeight! * 0.1),
           NoAccountText(),
         ],
       ),

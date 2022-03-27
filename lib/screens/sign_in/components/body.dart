@@ -16,7 +16,7 @@ class Body extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: SizeConfig.screenHeight * 0.04),
+                SizedBox(height: SizeConfig.screenHeight! * 0.04),
                 Text(
                   "Добро Пожаловать",
                   style: TextStyle(
@@ -29,9 +29,9 @@ class Body extends StatelessWidget {
                   "Войдите с помощью пароля или через соцсети",
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                SizedBox(height: SizeConfig.screenHeight! * 0.08),
                 SignForm(),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                SizedBox(height: SizeConfig.screenHeight! * 0.08),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

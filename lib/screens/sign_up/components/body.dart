@@ -17,15 +17,15 @@ class Body extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: SizeConfig.screenHeight * 0.04), // 4%
+                SizedBox(height: SizeConfig.screenHeight! * 0.04), // 4%
                 Text("Создать аккаунт", style: headingStyle),
                 Text(
                   "Регистрация с помощью соцсетей",
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                SizedBox(height: SizeConfig.screenHeight! * 0.08),
                 SignUpForm(),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                SizedBox(height: SizeConfig.screenHeight! * 0.08),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

@@ -5,13 +5,13 @@ import '../size_config.dart';
 
 class SocalCard extends StatelessWidget {
   const SocalCard({
-    Key key,
+    Key? key,
     this.icon,
     this.press,
   }) : super(key: key);
 
-  final String icon;
-  final Function press;
+  final String? icon;
+  final Function? press;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class SocalCard extends StatelessWidget {
           color: Color(0xFFF5F6F9),
           shape: BoxShape.circle,
         ),
-        child: SvgPicture.asset(icon),
+        child: SvgPicture.asset(icon!),
       ),
     );
   }

@@ -8,11 +8,11 @@ import '../enums.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({
-    Key key,
+    Key? key,
     @required this.selectedMenu,
   }) : super(key: key);
 
-  final MenuState selectedMenu;
+  final MenuState? selectedMenu;
 
   @override
   Widget build(BuildContext context) {

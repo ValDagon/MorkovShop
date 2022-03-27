@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class Product {
-  final int id;
-  final String title, description;
-  final List<String> images;
+  final int? id;
+  final String? title, description;
+  final List<String>? images;
   // final List<Color> colors;
-  final double rating, price;
-  final bool isFavourite, isPopular;
+  final double? rating, price;
+  final bool? isFavourite, isPopular;
 
   Product({
     @required this.id,
@@ -26,12 +26,12 @@ class Product {
 List<Product> demoProducts = [
   Product(
     id: 1,
-     images: [
-       "assets/images/Image Popular Product 1.png",
-       "assets/images/Image Popular Product 1.png",
-       "assets/images/Image Popular Product 1.png",
-       "assets/images/Image Popular Product 1.png",
-     ],
+    images: [
+      "assets/images/Image Popular Product 1.png",
+      "assets/images/Image Popular Product 1.png",
+      "assets/images/Image Popular Product 1.png",
+      "assets/images/Image Popular Product 1.png",
+    ],
     // colors: [
     //   Color(0xFFF6625E),
     //   Color(0xFF836DB8),
@@ -99,5 +99,4 @@ List<Product> demoProducts = [
   ),
 ];
 
-const String description =
-    "Описание продукта";
+const String description = "Описание продукта";

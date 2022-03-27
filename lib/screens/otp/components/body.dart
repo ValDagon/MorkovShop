@@ -15,7 +15,7 @@ class Body extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: SizeConfig.screenHeight * 0.05),
+              SizedBox(height: SizeConfig.screenHeight! * 0.05),
               Text(
                 "OTP Verification",
                 style: headingStyle,
@@ -23,7 +23,7 @@ class Body extends StatelessWidget {
               Text("We sent your code to +1 898 860 ***"),
               buildTimer(),
               OtpForm(),
-              SizedBox(height: SizeConfig.screenHeight * 0.1),
+              SizedBox(height: SizeConfig.screenHeight! * 0.1),
               GestureDetector(
                 onTap: () {
                   // OTP code resend

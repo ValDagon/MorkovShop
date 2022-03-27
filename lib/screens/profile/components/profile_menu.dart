@@ -6,14 +6,14 @@ import '../../../constants.dart';
 
 class ProfileMenu extends StatelessWidget {
   const ProfileMenu({
-    Key key,
+    Key? key,
     @required this.text,
     @required this.icon,
     this.press,
   }) : super(key: key);
 
-  final String text, icon;
-  final VoidCallback press;
+  final String? text, icon;
+  final VoidCallback? press;
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +30,12 @@ class ProfileMenu extends StatelessWidget {
         child: Row(
           children: [
             SvgPicture.asset(
-              icon,
+              icon!,
               color: kPrimaryColor,
               width: 22,
             ),
             SizedBox(width: 20),
-            Expanded(child: Text(text)),
+            Expanded(child: Text(text!)),
             Icon(Icons.arrow_forward_ios),
           ],
         ),
