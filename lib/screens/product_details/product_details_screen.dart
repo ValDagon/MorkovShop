@@ -13,6 +13,7 @@ class ProductDetailsScreen extends StatelessWidget {
         ModalRoute.of(context)!.settings.arguments as ProductDetailsArguments;
     return Scaffold(
       backgroundColor: Color(0xFFF5F6F9),
+      // Проблема в CustomAppBar
       appBar: CustomAppBar(agrs.product.rating),
       body: Body(product: agrs.product),
     );

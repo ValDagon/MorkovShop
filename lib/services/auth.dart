@@ -12,6 +12,8 @@ class AuthService {
       User? user = result.user;
       return AuthUser.fromFirebase(user);
     } on FirebaseException catch (error) {
+      print("SignInEx");
+      print(error);
       return null;
     }
   }
@@ -24,6 +26,8 @@ class AuthService {
       User? user = result.user;
       return AuthUser.fromFirebase(user);
     } on FirebaseException catch (error) {
+      print("RegEx");
+      print(error);
       return null;
     }
   }

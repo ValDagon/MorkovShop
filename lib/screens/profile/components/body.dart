@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/screens/my_profile/my_profile_screen.dart';
+import 'package:shop_app/services/auth.dart';
 
 import 'profile_menu.dart';
 import 'profile_pic.dart';
@@ -12,25 +14,31 @@ class Body extends StatelessWidget {
         children: [
           ProfilePic(),
           SizedBox(height: 20),
-          ProfileMenu(
+          ProfileMenuButton(
             text: "Мой профиль",
             icon: "assets/icons/User Icon.svg",
-            press: () => {},
+            press: () => {
+              print("My Profile"),
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => MyProfileScreen()))
+            },
           ),
-          ProfileMenu(
+          ProfileMenuButton(
             text: "Настройки",
             icon: "assets/icons/Settings.svg",
             press: () {},
           ),
-          ProfileMenu(
+          ProfileMenuButton(
             text: "Помощь",
             icon: "assets/icons/Question mark.svg",
             press: () {},
           ),
-          ProfileMenu(
+          ProfileMenuButton(
             text: "Выйти из аккаунта",
             icon: "assets/icons/Log out.svg",
-            press: () {},
+            press: () {
+              AuthService().logOut();
+            },
           ),
         ],
       ),

@@ -4,8 +4,8 @@ import 'package:shop_app/screens/my_profile/my_profile_screen.dart';
 
 import '../../../constants.dart';
 
-class ProfileMenu extends StatelessWidget {
-  const ProfileMenu({
+class ProfileMenuButton extends StatelessWidget {
+  const ProfileMenuButton({
     Key? key,
     @required this.text,
     @required this.icon,
@@ -23,10 +23,7 @@ class ProfileMenu extends StatelessWidget {
         padding: EdgeInsets.all(20),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         color: Color(0xFFF5F6F9),
-        onPressed: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => MyProfileScreen()));
-        },
+        onPressed: press,
         child: Row(
           children: [
             SvgPicture.asset(

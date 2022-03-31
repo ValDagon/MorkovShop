@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shop_app/components/custom_surfix_icon.dart';
 import 'package:shop_app/components/default_button.dart';
 import 'package:shop_app/components/form_error.dart';
+import 'package:shop_app/domain/AuthUser.dart';
 import 'package:shop_app/screens/complete_profile/complete_profile_screen.dart';
+import 'package:shop_app/services/auth.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -19,6 +22,8 @@ class _SignUpFormState extends State<SignUpForm> {
   String? conform_password;
   bool remember = false;
   final List<String> errors = [];
+
+  AuthService _authService = AuthService();
 
   void addError({String? error}) {
     if (!errors.contains(error))
@@ -50,16 +55,31 @@ class _SignUpFormState extends State<SignUpForm> {
           DefaultButton(
             text: "Продолжить",
             press: () {
-              if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
-                // if all are valid then go to success screen
-                Navigator.pushNamed(context, CompleteProfileScreen.routeName);
-              }
+              _registerButtonAction();
             },
           ),
         ],
       ),
     );
+  }
+
+  void _registerButtonAction() async {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+      AuthUser? user =
+          await _authService.registerWithEmailAndPassword(email!, password!);
+
+      if (user == null) {
+        Fluttertoast.showToast(
+            msg: "Что-то пошло не так",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
+      }
+    }
   }
 
   TextFormField buildConformPassFormField() {

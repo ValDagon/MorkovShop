@@ -1,9 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shop_app/components/custom_surfix_icon.dart';
 import 'package:shop_app/components/form_error.dart';
+import 'package:shop_app/domain/AuthUser.dart';
 import 'package:shop_app/helper/keyboard.dart';
 import 'package:shop_app/screens/forgot_password/forgot_password_screen.dart';
 import 'package:shop_app/screens/login_success/login_success_screen.dart';
+import 'package:shop_app/services/auth.dart';
 
 import '../../../components/default_button.dart';
 import '../../../constants.dart';
@@ -20,6 +24,8 @@ class _SignFormState extends State<SignForm> {
   String? password;
   bool remember = false;
   final List<String> errors = [];
+
+  AuthService _authService = AuthService();
 
   void addError({String? error}) {
     if (!errors.contains(error))
@@ -73,17 +79,35 @@ class _SignFormState extends State<SignForm> {
           DefaultButton(
             text: "Продолжить",
             press: () {
-              if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
-                // if all are valid then go to success screen
-                KeyboardUtil.hideKeyboard(context);
-                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
-              }
+              _loginButtonAction();
             },
           ),
         ],
       ),
     );
+  }
+
+  void _loginButtonAction() async {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+
+      AuthUser? user =
+          await _authService.signInWithEmailAndPassword(email!, password!);
+
+      if (user == null) {
+        Fluttertoast.showToast(
+            msg: "Неверный логин или пароль",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
+      }
+      // if all are valid then go to success screen
+      KeyboardUtil.hideKeyboard(context);
+      // Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+    }
   }
 
   TextFormField buildPasswordFormField() {
