@@ -11,7 +11,7 @@ class SocalCard extends StatelessWidget {
   }) : super(key: key);
 
   final String? icon;
-  final Function? press;
+  final VoidCallback? press;
 
   @override
   Widget build(BuildContext context) {
