@@ -15,6 +15,7 @@ class CartCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var counter = 0;
     return Row(
       children: [
         SizedBox(
@@ -73,14 +74,16 @@ class CartCard extends StatelessWidget {
           press: () {},
         ),
         Text(
-          "1",
+          "$counter",
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
         SizedBox(width: getProportionateScreenWidth(20)),
         RoundedIconBtn(
           icon: Icons.add,
           showShadow: true,
-          press: () {},
+          press: () {
+            print(counter++);
+          },
         ),
       ],
     );

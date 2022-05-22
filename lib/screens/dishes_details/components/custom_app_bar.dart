@@ -7,9 +7,7 @@ class CustomAppBar extends PreferredSize {
   final double? rating;
 
   CustomAppBar(this.rating)
-      : super(
-            child: CustomAppBar(rating),
-            preferredSize: Size.fromHeight(AppBar().preferredSize.height));
+      : super(child: Container(), preferredSize: Size.fromHeight(22));
   // CustomAppBar({@required this.rating}) : super(child : rating, prefere 82);
 
   @override

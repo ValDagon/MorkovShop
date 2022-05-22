@@ -14,10 +14,20 @@ class ProductDetailsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFFF5F6F9),
       // Проблема в CustomAppBar
-      appBar: CustomAppBar(agrs.product.rating),
+//      appBar: CustomAppBar(agrs.product.rating),
+      appBar: buildAppBar(context),
       body: Body(product: agrs.product),
     );
   }
+}
+
+AppBar buildAppBar(BuildContext context) {
+  return AppBar(
+    title: Text(
+      "Блюдо дня",
+      style: TextStyle(color: Colors.black),
+    ),
+  );
 }
 
 class ProductDetailsArguments {
