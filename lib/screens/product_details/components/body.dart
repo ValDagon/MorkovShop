@@ -4,6 +4,7 @@ import 'package:shop_app/components/product_added.dart';
 import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/size_config.dart';
 
+import '../../../models/Cart.dart';
 import 'color_dots.dart';
 import 'product_description.dart';
 import 'top_rounded_container.dart';
@@ -42,12 +43,16 @@ class Body extends StatelessWidget {
                           top: getProportionateScreenWidth(15),
                         ),
                         child: DefaultButton(
-                          text: "Продолжить",
-                          press: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ProductAdded())),
-                        ),
+                            text: "Продолжить",
+                            press: () {
+                              demoCarts
+                                  .add(Cart(product: product, numOfItem: 1));
+                            }
+                            // => Navigator.push(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //         builder: (context) => ProductAdded())),
+                            ),
                       ),
                     ),
                   ],
