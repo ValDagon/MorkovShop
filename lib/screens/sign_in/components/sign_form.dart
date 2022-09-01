@@ -6,7 +6,9 @@ import 'package:shop_app/components/form_error.dart';
 import 'package:shop_app/domain/AuthUser.dart';
 import 'package:shop_app/helper/keyboard.dart';
 import 'package:shop_app/screens/forgot_password/forgot_password_screen.dart';
+import 'package:shop_app/screens/home/home_screen.dart';
 import 'package:shop_app/screens/login_success/login_success_screen.dart';
+import 'package:shop_app/screens/profile/profile_screen.dart';
 import 'package:shop_app/services/auth.dart';
 
 import '../../../components/default_button.dart';
@@ -53,16 +55,16 @@ class _SignFormState extends State<SignForm> {
           SizedBox(height: getProportionateScreenHeight(30)),
           Row(
             children: [
-              Checkbox(
-                value: remember,
-                activeColor: kPrimaryColor,
-                onChanged: (value) {
-                  setState(() {
-                    remember = value!;
-                  });
-                },
-              ),
-              Text("Запомнить меня"),
+              // Checkbox(
+              //   value: remember,
+              //   activeColor: kPrimaryColor,
+              //   onChanged: (value) {
+              //     setState(() {
+              //       remember = value!;
+              //     });
+              //   },
+              // ),
+              // Text("Запомнить меня"),
               Spacer(),
               GestureDetector(
                 onTap: () => Navigator.pushNamed(
@@ -103,10 +105,11 @@ class _SignFormState extends State<SignForm> {
             backgroundColor: Colors.red,
             textColor: Colors.white,
             fontSize: 16.0);
+      } else {
+        KeyboardUtil.hideKeyboard(context);
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => HomeScreen()));
       }
-      // if all are valid then go to success screen
-      KeyboardUtil.hideKeyboard(context);
-      // Navigator.pushNamed(context, LoginSuccessScreen.routeName);
     }
   }
 
