@@ -56,10 +56,10 @@ class CheckoutCard extends StatelessWidget {
                 ),
                 SizedBox(
                   width: getProportionateScreenWidth(190),
-                  child: DefaultButton(
-                    text: "Купить",
-                    press: () {},
-                  ),
+                  // child: DefaultButton(
+                  //   text: "Купить",
+                  //   press: () {},
+                  // ),
                 ),
               ],
             ),

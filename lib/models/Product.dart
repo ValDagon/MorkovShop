@@ -6,7 +6,7 @@ class Product {
   final List<String>? images;
   // final List<Color> colors;
   final double? rating, price;
-  final bool? isFavourite, isPopular;
+  bool? isFavourite, isPopular;
 
   Product({
     @required this.id,
@@ -27,9 +27,6 @@ List<Product> demoProducts = [
   Product(
     id: 1,
     images: [
-      "assets/images/Image Popular Product 1.png",
-      "assets/images/Image Popular Product 1.png",
-      "assets/images/Image Popular Product 1.png",
       "assets/images/Image Popular Product 1.png",
     ],
     // colors: [

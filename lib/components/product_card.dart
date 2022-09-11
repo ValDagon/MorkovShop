@@ -4,9 +4,11 @@ import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/screens/product_details/product_details_screen.dart';
 
 import '../constants.dart';
+import '../models/Product.dart';
+import '../models/Product.dart';
 import '../size_config.dart';
 
-class ProductCard extends StatelessWidget {
+class ProductCard extends StatefulWidget {
   const ProductCard({
     Key? key,
     this.width = 140,
@@ -18,16 +20,21 @@ class ProductCard extends StatelessWidget {
   final Product? product;
 
   @override
+  State<ProductCard> createState() => _ProductCardState();
+}
+
+class _ProductCardState extends State<ProductCard> {
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
       child: SizedBox(
-        width: getProportionateScreenWidth(width!),
+        width: getProportionateScreenWidth(widget.width!),
         child: GestureDetector(
           onTap: () => Navigator.pushNamed(
             context,
             ProductDetailsScreen.routeName,
-            arguments: ProductDetailsArguments(product: product!),
+            arguments: ProductDetailsArguments(product: widget.product!),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,14 +48,14 @@ class ProductCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Hero(
-                    tag: product!.id.toString(),
-                    child: Image.asset(product!.images![0]),
+                    tag: widget.product!.id.toString(),
+                    child: Image.asset(widget.product!.images![0]),
                   ),
                 ),
               ),
               const SizedBox(height: 10),
               Text(
-                product!.title!,
+                widget.product!.title!,
                 style: TextStyle(color: Colors.black),
                 maxLines: 2,
               ),
@@ -64,7 +71,7 @@ class ProductCard extends StatelessWidget {
                         decoration: TextDecoration.lineThrough),
                   ),
                   Text(
-                    "${product!.price}",
+                    "${widget.product!.price}",
                     style: TextStyle(
                       fontSize: getProportionateScreenWidth(18),
                       fontWeight: FontWeight.w600,
@@ -79,14 +86,14 @@ class ProductCard extends StatelessWidget {
                       height: getProportionateScreenWidth(28),
                       width: getProportionateScreenWidth(28),
                       decoration: BoxDecoration(
-                        color: product!.isFavourite!
+                        color: widget.product!.isFavourite!
                             ? kPrimaryColor.withOpacity(0.15)
                             : kSecondaryColor.withOpacity(0.1),
                         shape: BoxShape.circle,
                       ),
                       child: SvgPicture.asset(
                         "assets/icons/Heart Icon_2.svg",
-                        color: product!.isFavourite!
+                        color: widget.product!.isFavourite!
                             ? Color(0xFFFF4848)
                             : Color(0xFFDBDEE4),
                       ),
